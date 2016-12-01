@@ -4,10 +4,9 @@ angular.module("cloudDemo").service('cloudWrapperService', ["$rootScope", "$loca
 		
 	//check your thingspace account for your clientKey, clientSecret, and callbackUrl configuration	
 	service.cloud.init({
-		clientKey : "Z6mUblZ5Pu7dbeRbQVIt",
-		clientSecret : "316JFa4jkjxenJvCQVtz",
+		clientKey : "Z6mUblZ5Pu7dbeRbQVIt_local",
+		clientSecret : "316JFa4jkjxenJvCQVtz_local",
 		callbackUrl : "http://localhost/Sites/sdk-javascript/sample/index.html", 
-
 		
 		//by default the SDK will escape all responses for you, since angular already does this we are going to disable it
 		htmlEscape : false, 
