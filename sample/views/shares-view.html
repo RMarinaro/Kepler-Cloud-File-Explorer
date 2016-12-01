@@ -1,0 +1,31 @@
+<div ng-controller="sharesController">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 side">
+        <side-navigation></side-navigation>
+      </div>
+      <div class="col-md-10 col-md-offset-2 main">
+        <app-navbar></app-navbar>
+        <div class="files-header">
+          <h1 class="text-info">Shares</h1>
+        </div>
+        <div class="content-main">
+          <div class="text-info" ng-show="loading"> 
+            <h2>Loading...</h2>
+          </div>
+          <div class="container-fluid">
+            <div ng-show="!shares.length && !loading">
+              <h3 class="text-info">You have no shares</h3>
+            </div>
+            <div ng-repeat="share in shares" class="file-row">
+              <a class="text-info" target="_blank" ng-href="{{share.links[0].link}}">
+                <i class="material-icons">link</i>
+                {{share.name}}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

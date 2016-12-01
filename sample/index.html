@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <title>Kepler File Explorer</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- load angular first -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.min.js"></script>
+  <!-- upload directive and services -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.0.4/ng-file-upload.min.js"></script>
+
+  <!-- load angular main app file -->
+  <script src="scripts/app.js"></script>
+  <!-- controllers -->
+  <script src="scripts/controllers/playlistDetailController.js"></script>  
+  <script src="scripts/controllers/playlistController.js"></script>
+  <script src="scripts/controllers/contactsController.js"></script>
+  <script src="scripts/controllers/homeController.js"></script>
+  <script src="scripts/controllers/filesController.js"></script>
+  <script src="scripts/controllers/metadataController.js"></script>
+  <script src="scripts/controllers/trashController.js"></script>
+  <script src="scripts/controllers/sharesController.js"></script>
+
+  <!-- modal controllers -->  
+  <script src="scripts/controllers/modals/restoreFileController.js"></script>
+  <script src="scripts/controllers/modals/emptyTrashController.js"></script>
+
+
+  <!-- services -->
+  <script src="scripts/services/cloudWrapperService.js"></script>
+  <!-- directives -->
+  <script src="scripts/directives/sideNavigation.js"></script>
+  <script src="scripts/directives/appNavbar.js"></script>
+  <script src="scripts/directives/usage.js"></script>
+  <script src="scripts/directives/fileChange.js"></script>
+  <script src="scripts/directives/uploader.js"></script>
+
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Material Design fonts an CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.7/css/bootstrap-material-design.min.css">
+  <link href="https://fezvrasta.github.io/snackbarjs/dist/snackbar.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.7/css/ripples.css">
+
+  <!-- our css on top of everything else -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
+
+    <body ng-app="cloudDemo">
+      <ng-view></ng-view>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- used for sha256 hashing -->
+    <script src="https://rawgit.com/emn178/js-sha256/master/build/sha256.min.js"></script>
+    <script src="scripts/vendor/arrive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.7/js/ripples.min.js"></script>
+    <script src="https://fezvrasta.github.io/snackbarjs/dist/snackbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.7/js/material.min.js"></script>
+
+    <!-- bootstrap ui directives -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.1/ui-bootstrap-tpls.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+      $.material.init();
+    });
+
+    </script>
+    <!-- load the cloud SDK -->
+    <script src="../sdk/dist/web/thingspace-cloud.min.js"></script>
+
+
+
+  </body>
+  </html>

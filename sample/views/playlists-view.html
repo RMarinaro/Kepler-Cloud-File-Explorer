@@ -1,0 +1,26 @@
+<div ng-controller="playlistController">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 side">
+        <side-navigation></side-navigation>
+      </div>
+      <div class="col-md-10 col-md-offset-2 main">
+        <app-navbar></app-navbar>
+        <div class="files-header">
+          <h1 class="text-info">Playlists</h1>
+        </div>
+        <div class="content-main">
+          <div class="text-info" ng-show="loading"> 
+            <h2>Loading...</h2>
+          </div>
+          <div ng-repeat="playlist in playlists" class="file-row">
+            <a ng-click="go('/playlists/' + playlist.uid)" class="text-info">
+              <i class="material-icons">list</i>
+              {{playlist.name}}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

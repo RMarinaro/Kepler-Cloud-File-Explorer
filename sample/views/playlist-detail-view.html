@@ -1,0 +1,48 @@
+<div ng-controller="playlistDetailController">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 side">
+        <side-navigation></side-navigation>
+      </div>
+      <div class="col-md-10 col-md-offset-2 main">
+        <app-navbar></app-navbar>
+        <div class="files-header">
+          <h1 class="text-info">Playlists / {{playlistInfo.name}}</h1>
+        </div>
+        <div class="content-main">
+          <div class="text-info" ng-show="loading"> 
+            <h2>Loading...</h2>
+          </div>
+          <div>
+            <b>Type: </b> {{playlistInfo.type}} <br>
+            <b>Created: </b> {{playlistInfo.creationDate}} <br>
+            <b>Last Modified: </b> {{playlistInfo.lastModifiedDate}} <br>
+            <table class="table table-striped table-hover">
+              <thead>
+                <th>#</th>
+                <th>Name</th>
+              </thead>
+              <tbody>
+                <tr ng-class="{'': $index % 7 == 0, 
+                              '': $index % 7 == 1, 
+                              'info': $index % 7 == 2,
+                              'success': $index % 7 == 3,
+                              'danger' : $index % 7 == 4,
+                              'warning' : $index % 7 == 5,
+                              'active' : $index % 7 == 6
+                              }" 
+                    ng-repeat="playlistItem in playlist.playlistElement"
+                    ng-click="getPlaylistContentWrapper(playlistItem.itemuid)"
+                    >
+                  
+                  <td>{{$index + 1}}</td>
+                  <td>{{cloud.util.pathToName(playlistItem.filename)}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

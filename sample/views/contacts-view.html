@@ -1,0 +1,37 @@
+<div ng-controller="contactsController">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 side">
+        <side-navigation></side-navigation>
+      </div>
+      <div class="col-md-10 col-md-offset-2 main">
+        <app-navbar></app-navbar>
+        <div class="files-header">
+          <h1 class="text-info">Contacts</h1>
+        </div>
+        <div class="content-main">
+          <div class="text-info" ng-show="loading"> 
+            <h2>Loading...</h2>
+          </div>
+          <div class="container-fluid">
+            <ng-repeat ng-repeat="contact in contacts">
+              <div class="clearfix" ng-if="$index % 3 == 0"></div>
+              <div class="col-md-4 file-row">
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title"><i class="material-icons valign-mid">person_pin</i>{{contact.firstname}}</h3>
+                  </div>
+                  <div class="panel-body">
+                    <div ng-repeat="number in contact.tel">
+                      <b>{{number.type}}</b> : {{number.number}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-repeat>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

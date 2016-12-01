@@ -1,0 +1,10 @@
+<div class="file-row">
+	<div class="form-group is-fileinput">
+	  	<input type="file" id="fileUploaderInput" multiple="" ngf-select="uploadFile($file)">
+	  	<input type="text" id="fileUploaderText" readonly="" class="form-control" placeholder="Upload a file">
+		<span class="material-input"></span>
+	</div>
+	<div ng-show="isUploading" class="progress progress-striped active usage">
+		<div class="progress-bar" style="width: {{progressPercentage}}%"></div>
+	</div>
+</div>
